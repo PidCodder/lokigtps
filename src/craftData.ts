@@ -39,8 +39,17 @@ export const MINECRAFT_SERVERS: MinecraftServer[] = [
     name: 'GrowIndo Private Server',
     tags: 'Mid Economies • Many Players • Many Feature ☠️',
     icon: server1Img,
-    description: 'GrowIndo PS adalah Growtopia Private Server ramai Players dan memiliki banyak Features dan Event!',
+    description: 'GrowIndoPS adalah Growtopia Private Server ramai Players dan memiliki banyak Features dan Event!',
     link: 'https://linktr.ee/growindops',
+    playersOnline: 128,
+  },
+  {
+    id: 'server-2',
+    name: 'Celestial Private Server',
+    tags: 'Mid Economies • Fresh Server • Many Feature⚡️',
+    icon: 'https://i.imgur.com/iJUdVpF.jpeg',
+    description: 'CelestialPS adalah Growtopia Private Server Fresh yang memiliki banyak sekali Features!',
+    link: 'https://celestialps.site/#top',
     playersOnline: 128,
   },
 ];
