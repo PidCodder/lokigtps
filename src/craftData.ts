@@ -5,8 +5,8 @@ import server1Img from './assets/images/server1.webp';
 
 export const YUMICHIEE_PROFILE: YumichieeProfile & { logoImage: string } = {
   handle: '@LokiGTPS',
-  greeting: 'Best Promote GTPS 🚀',
-  subtitle: 'Growtopia Private Server Explorer & Content Creator ⚡',
+  greeting: 'Best Promote GTPS Indonesia🚀',
+  subtitle: 'Growtopia Private Server Promoter & Content Creator ⚡',
   badges: 'Growtopia • GTPS Promote • Community',
   bannerImage: lokiBannerImg,
   avatarImage: paviconImg,
@@ -21,13 +21,13 @@ export const YUMICHIEE_PROFILE: YumichieeProfile & { logoImage: string } = {
 export const SUPPORT_PLATFORMS: SupportPlatform[] = [
   {
     id: 'Promote Service',
-    title: 'Order Promote Service',
+    title: 'Order Promote Service? Click Here !',
     platformName: 'Discord',
     url: 'https://discord.com/invite/XaTn4quvnZ',
   },
   {
     id: 'Comunity Promote',
-    title: 'Comunity Promoter ID',
+    title: 'Comunity Group Promoter INDONESIA',
     platformName: 'Whatsapp Group',
     url: 'https://chat.whatsapp.com/GhlwYFeJhgD4Onl3BEK3nP',
   },
