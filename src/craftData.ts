@@ -35,21 +35,30 @@ export const SUPPORT_PLATFORMS: SupportPlatform[] = [
 
 export const MINECRAFT_SERVERS: MinecraftServer[] = [
   {
-    id: 'server-1',
-    name: 'GrowIndo Private Server',
-    tags: 'Mid Economies • Many Players • Many Feature ☠️',
-    icon: server1Img,
-    description: 'GrowIndoPS adalah Growtopia Private Server ramai Players dan memiliki banyak Features dan Event!',
-    link: 'https://linktr.ee/growindops',
-    playersOnline: 128,
-  },
-  {
     id: 'server-2',
     name: 'Celestial Private Server',
     tags: 'Mid Economies • Fresh Server • Many Feature⚡️',
     icon: 'https://i.imgur.com/iJUdVpF.jpeg',
     description: 'CelestialPS adalah Growtopia Private Server Fresh yang memiliki banyak sekali Features!',
     link: 'https://celestialps.site/#top',
+    playersOnline: 128,
+  },
+  {
+    id: 'server-2',
+    name: 'GTID Private Server',
+    tags: 'Hard Economies • Indonesia Server • Many event⚡️',
+    icon: 'https://i.imgur.com/OTIDtzw.png',
+    description: 'CelestialPS adalah Growtopia Private Server Fresh yang memiliki banyak sekali hal bertema indonesia!',
+    link: 'https://discord.gg/indo',
+    playersOnline: 128,
+  },
+  {
+    id: 'server-3',
+    name: 'MX Private Server',
+    tags: 'Mid to Hard Economies • Fresh Server • Many Citem',
+    icon: 'https://i.imgur.com/zUN5bIL.png',
+    description: 'MXPS adalah Growtopia Private Server Fresh yang memiliki banyak sekali Features dan costum item!',
+    link: 'https://mxps.netlify.app/ ',
     playersOnline: 128,
   },
 ];
