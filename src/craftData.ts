@@ -56,7 +56,7 @@ export const MINECRAFT_SERVERS: MinecraftServer[] = [
     id: 'server-2',
     name: 'Tera Private Server',
     tags: 'Mid Economies • BIG Server • Many Players⚡️',
-    icon: 'https://imgur.com/OiYoYCW',
+    icon: 'https://i.imgur.com/OiYoYCW.jpeg',
     description: 'TERAPS adalah Growtopia Private Server Big yang memiliki banyak sekali Players!',
     link: 'https://linktr.ee/teraps__',
     playersOnline: 128,
