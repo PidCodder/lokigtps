@@ -35,15 +35,6 @@ export const SUPPORT_PLATFORMS: SupportPlatform[] = [
 
 export const MINECRAFT_SERVERS: MinecraftServer[] = [
   {
-    id: 'server-2',
-    name: 'Tera Private Server',
-    tags: 'Mid Economies • BIG Server • Many Players⚡️',
-    icon: 'https://i.imgur.com/OiYoYCW.jpeg',
-    description: 'TERAPS adalah Growtopia Private Server Big yang memiliki banyak sekali Players!',
-    link: 'https://linktr.ee/teraps__',
-    playersOnline: 128,
-  },
-  {
     id: 'server-3',
     name: 'CSPS Private Server',
     tags: 'Mid Economies • Fresh Server • Many Citem and Features⚡️',
@@ -55,7 +46,7 @@ export const MINECRAFT_SERVERS: MinecraftServer[] = [
   {
     id: 'server-2',
     name: 'CorePS Private Server',
-    tags: 'Easy Economies • BIG Server • Many Feature⚡️',
+    tags: 'Easy Economies • FRESH Server • Many Feature⚡️',
     icon: 'https://i.imgur.com/XkxdiBU.jpeg',
     description: 'CorePS adalah Growtopia Private Server Fresh yang sangat menarik karna kalian bisa membeli role menggunakan coin di dalam game!',
     link: 'https://chat.whatsapp.com/Lg20u3X4GNy6q2mxmwc3v9',
@@ -64,10 +55,19 @@ export const MINECRAFT_SERVERS: MinecraftServer[] = [
   {
     id: 'server-3',
     name: 'CreativePS Private Server',
-    tags: 'Easy Economies • BIG Server • Many Feature⚡️',
+    tags: 'Easy Economies • BIG Server • Many Players⚡️',
     icon: 'https://i.imgur.com/ZTKfDrv.png',
     description: 'CreativePS adalah Growtopia Private Server Big yang memiliki banyak sekali Players!',
     link: 'https://creativeps.netlify.app/',
+    playersOnline: 128,
+  },
+  {
+    id: 'server-2',
+    name: 'GROWINDO Private Server',
+    tags: 'Mid Economies • RMT Players • Many Players⚡️',
+    icon: 'https://i.imgur.com/jh6LGiC.png',
+    description: 'GROWINDO adalah Growtopia Private Server yang memiliki banyak sekali Players RMT!',
+    link: 'https://linktr.ee/growindops',
     playersOnline: 128,
   },
 ];
