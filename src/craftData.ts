@@ -35,15 +35,6 @@ export const SUPPORT_PLATFORMS: SupportPlatform[] = [
 
 export const MINECRAFT_SERVERS: MinecraftServer[] = [
   {
-    id: 'server-3',
-    name: 'CSPS Private Server',
-    tags: 'Mid Economies • Fresh Server • Many Citem and Features⚡️',
-    icon: 'https://celestialps.site/logo.png',
-    description: 'CSPS adalah Growtopia Private Server Fresh yang memiliki banyak sekali Features dan costum item!',
-    link: 'https://celestialps.site/#top',
-    playersOnline: 128,
-  },
-  {
     id: 'server-2',
     name: 'CorePS Private Server',
     tags: 'Easy Economies • FRESH Server • Many Feature⚡️',
@@ -68,6 +59,15 @@ export const MINECRAFT_SERVERS: MinecraftServer[] = [
     icon: 'https://i.imgur.com/jh6LGiC.png',
     description: 'GROWINDO adalah Growtopia Private Server yang memiliki banyak sekali Players RMT!',
     link: 'https://linktr.ee/growindops',
+    playersOnline: 128,
+  },
+  {
+    id: 'server-3',
+    name: 'NUSATOPIA Private Server',
+    tags: 'Stable Economies • ManyFreatures • Many Event⚡️',
+    icon: 'https://i.imgur.com/jtWUgu7.jpeg',
+    description: 'NUSATOPIA adalah Growtopia Private Server Fresh yang memiliki banyak sekali Features dan costum item!',
+    link: 'https://chat.whatsapp.com/KWw1HmsIsoT7JmalF0d4vS',
     playersOnline: 128,
   },
 ];
