@@ -35,15 +35,6 @@ export const SUPPORT_PLATFORMS: SupportPlatform[] = [
 
 export const MINECRAFT_SERVERS: MinecraftServer[] = [
   {
-    id: 'server-1',
-    name: 'CorePS Private Server',
-    tags: 'Easy Economies • FRESH Server • Many Feature⚡️',
-    icon: 'https://i.imgur.com/XkxdiBU.jpeg',
-    description: 'CorePS adalah Growtopia Private Server Fresh yang sangat menarik karna kalian bisa membeli role menggunakan coin di dalam game!',
-    link: 'https://chat.whatsapp.com/Lg20u3X4GNy6q2mxmwc3v9',
-    playersOnline: 128,
-  },
-  {
     id: 'server-2',
     name: 'CreativePS Private Server',
     tags: 'Easy Economies • BIG Server • Many Players⚡️',
@@ -64,10 +55,19 @@ export const MINECRAFT_SERVERS: MinecraftServer[] = [
   {
     id: 'server-4',
     name: 'NUSATOPIA Private Server',
-    tags: 'Stable Economies • ManyFreatures • Many Event⚡️',
+    tags: 'Stable Economies • Many Features • Many Event⚡️',
     icon: 'https://i.imgur.com/jtWUgu7.jpeg',
-    description: 'NUSATOPIA adalah Growtopia Private Server Fresh yang memiliki banyak sekali Features dan costum item!',
+    description: 'NUSATOPIA adalah Growtopia Private Server Fresh yang memiliki banyak sekali Features dan custom item!',
     link: 'https://chat.whatsapp.com/KWw1HmsIsoT7JmalF0d4vS',
+    playersOnline: 128,
+  },
+  {
+    id: 'server-5',
+    name: 'FORCE Private Server',
+    tags: 'Stable Economies • Many Players • Many Event⚡️',
+    icon: 'https://i.imgur.com/y9barye.jpeg',
+    description: 'FORCE adalah Growtopia Private Server Fresh yang memiliki banyak Sekali Update Setelah Rollback!',
+    link: 'https://chat.whatsapp.com/LPt04XKArXu6JsyIspqmmn',
     playersOnline: 128,
   },
 ];
