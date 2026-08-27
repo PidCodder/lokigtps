@@ -46,7 +46,22 @@ interface TutorialPageProps {
 
 type TabType = 'android' | 'pc' | 'ios';
 
-const PTUNEL_STEPS = [
+interface TutorialStep {
+  step: number;
+  title: string;
+  desc?: string;
+  downloadUrl?: string;
+  downloadLabel?: string;
+  actionType?: string;
+  actionLabel?: string;
+  note?: string;
+  image?: string;
+  code?: string;
+  codeNote?: string;
+  example?: string;
+}
+
+const PTUNEL_STEPS: TutorialStep[] = [
   {
     step: 1,
     title: 'Download Game Growtopia di Play Store',
@@ -78,7 +93,7 @@ const PTUNEL_STEPS = [
     step: 5,
     title: 'Buka Aplikasi PowerTunnel',
     image: ptunel1,
-    desc: 'Jika sudah menemukan GTPS idaman kamu silahkan Buka aplikasi PowerTunnel yang sudah kamu dwonload dan klik ICON yang di kotak merah.',
+    desc: 'Jika sudah menemukan GTPS idaman kamu, buka aplikasi PowerTunnel yang sudah kamu download dan klik ikon yang di kotak merah.',
   },
   {
     step: 6,
@@ -90,19 +105,19 @@ const PTUNEL_STEPS = [
     step: 7,
     title: 'Buka Icon Settings',
     image: ptunel3,
-    desc: 'Buka icon settings Hosts untuk mempaste host Ptunel server gtps yang mau kalian mainkan.',
+    desc: 'Buka ikon settings Hosts untuk paste host PowerTunnel server GTPS yang mau kalian mainkan.',
   },
   {
     step: 8,
     title: 'Masukkan Host Server GTPS',
     image: ptunel4,
-    desc: 'Click Hosts File URL dan paste url host Khusus PowerTunel server GTPS yang mau di mainin.',
+    desc: 'Klik Hosts File URL dan paste URL host khusus PowerTunnel server GTPS yang mau dimainkan.',
   },
   {
     step: 9,
     title: 'Ubah menjadi On Start',
     image: ptunel5,
-    desc: 'Buka Host File Updated di bawah Host File URL dan ubah jadi On Start.',
+    desc: 'Buka Hosts File Update di bawah Hosts File URL dan ubah jadi On Start.',
   },
   {
     step: 10,
@@ -118,7 +133,7 @@ const PTUNEL_STEPS = [
   },
 ];
 
-const PC_STEPS = [
+const PC_STEPS: TutorialStep[] = [
   {
     step: 1,
     title: 'Download Game Growtopia untuk Windows',
@@ -136,29 +151,31 @@ const PC_STEPS = [
   {
     step: 3,
     title: 'Buka Notepad sebagai Administrator!',
-    desc: 'Di Search Windows Cari NotePad dan open sebagai Administrator Lalu Geser Mouse kalian ke FILE dan click OPEN.',
+    desc: 'Di search Windows cari Notepad dan buka sebagai Administrator, lalu klik File > Open.',
     image: pc1,
   },
   {
     step: 4,
-    title: 'Cari File Hosts',
+    title: 'Ketika sudah Click OPEN Cari Folder ECT',
+    desc: 'Cari Folder ECT dan ikuti path Foto Di bawah!',
     image: pc2,
   },
   {
     step: 5,
-    title: 'Ubah Dari Text Document Ke All Files',
-    desc: 'Ada beberapa yang file hosts nya ga muncul makadari itu kalian harus Ubah Dari Text Document Ke All Files Seperti Di Foto ',
+    title: 'Jika Sudah Di Folder ECT Ubah Text Documents Ke All Files',
+    desc: 'Ada beberapa yang file hosts-nya tidak muncul, maka dari itu kalian harus ubah dari Text Documents (*.txt) ke All Files (*.*) seperti di foto.',
     image: pc3,
   },
   {
     step: 6,
-    title: 'Jika Sudah Muncul Click 2x File Hosts',
+    title: 'Click 2x File Hosts Yang sudah mucul di Folder ECT',
+    desc: 'Jika Sudah Muncul Kalian Bisa Click 2X File Hosts nya',
     image: pc4,
   },
   {
     step: 7,
     title: 'Paste IP Host PC GTPS Kalian',
-    desc: 'Paste IP nya sesuai seperi yang ada di foto (paling bawah yaa)',
+    desc: 'Paste baris IP dan host-nya sesuai seperti yang ada di foto (di baris paling bawah ya).',
     image: pc5,
   },
   {
@@ -169,7 +186,7 @@ const PC_STEPS = [
   },
 ];
 
-const IOS_STEPS = [
+const IOS_STEPS: TutorialStep[] = [
   {
     step: 1,
     title: 'Download Game Growtopia di App Store',
@@ -201,25 +218,25 @@ const IOS_STEPS = [
     step: 5,
     title: 'Buka Aplikasi Surge 5',
     image: ios1,
-    desc: 'Buka aplikasi Surge 5 di iPhone Lalu Click Kotak merah di Foto di bawah.',
+    desc: 'Buka aplikasi Surge 5 di iPhone lalu klik kotak merah seperti pada foto di bawah.',
   },
   {
     step: 6,
-    title: 'Geser ke bawah dan cari Dwonload Profil Form URL',
+    title: 'Geser ke bawah dan cari Download Profile From URL',
     image: ios2,
-    desc: 'Scrool ke bawah dan Click Dwonload Profil Form URL untuk memasang host URL iOS server GTPS Kalian.',
+    desc: 'Scroll ke bawah dan klik Download Profile From URL untuk memasang host URL iOS server GTPS kalian.',
   },
   {
     step: 7,
-    title: 'Paste URL iOS Server GTPS Yang kalian mau mainkan',
+    title: 'Paste URL iOS Server GTPS yang Mau Dimainkan',
     image: ios3,
-    desc: 'PAste URL iOS Server GTPS Yang mau kalian mainkan Contoh seperti di foto dan Click Oke untuk menuju langkan berikutnya.',
+    desc: 'Paste URL iOS server GTPS yang mau kalian mainkan seperti di foto dan klik OK untuk menuju langkah berikutnya.',
   },
   {
     step: 8,
-    title: 'Click Start Di Halaman Utama',
+    title: 'Klik Start di Halaman Utama',
     image: ios4,
-    desc: 'Balik Ke halaman utama untuk Start Host nya dan jika Berubah Jadi STOP maka Vpn sudah berhasil di jalankan',
+    desc: 'Balik ke halaman utama untuk Start host-nya, dan jika berubah jadi STOP maka VPN sudah berhasil dijalankan.',
   },
   {
     step: 9,
@@ -334,7 +351,7 @@ export const TutorialPage: React.FC<TutorialPageProps> = ({ onNavigateHome, shou
               <div className="p-4 sm:p-5 rounded-3xl bg-black/25 border border-white/15 space-y-4 shadow-xl">
                 <div className="flex items-center gap-2 text-yellow-300 font-bold text-sm sm:text-base border-b border-white/10 pb-3">
                   <Smartphone className="w-5 h-5" />
-                  <span>Cara Bermain GTPS Menggunakan PowerTunel Android</span>
+                  <span>Cara Bermain GTPS Menggunakan PowerTunnel Android</span>
                 </div>
 
                 <p className="text-xs text-orange-100 leading-relaxed">
@@ -589,7 +606,7 @@ export const TutorialPage: React.FC<TutorialPageProps> = ({ onNavigateHome, shou
               <div className="p-4 sm:p-5 rounded-3xl bg-black/25 border border-white/15 space-y-4 shadow-xl">
                 <div className="flex items-center gap-2 text-yellow-300 font-bold text-sm sm:text-base border-b border-white/10 pb-3">
                   <Apple className="w-5 h-5" />
-                  <span>Cara Bermain GTPS Menggunakan Surge5 iOS</span>
+                  <span>Cara Bermain GTPS Menggunakan Surge 5 iOS</span>
                 </div>
 
                 <p className="text-xs text-orange-100 leading-relaxed">
