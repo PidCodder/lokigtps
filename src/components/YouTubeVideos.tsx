@@ -45,12 +45,12 @@ export const YouTubeVideos: React.FC = () => {
   };
 
   return (
-    <div className="w-full mb-8">
+    <div id="youtube-videos-section" className="w-full mb-8 scroll-mt-6">
       {/* Section Header */}
       <div className="flex items-center justify-between mb-4 px-1">
         <h2 className="text-base sm:text-lg font-normal text-white flex items-center gap-1.5 drop-shadow-sm">
           <Youtube className="w-5 h-5 text-red-500 fill-current inline-block" />
-          <span>Video Terbaru YouTube</span>
+          <span>Server GTPS yang kalian cari</span>
         </h2>
         <div className="flex items-center gap-2">
           <button
@@ -88,13 +88,14 @@ export const YouTubeVideos: React.FC = () => {
           {videos.map((video, idx) => (
             <motion.a
               key={video.id || idx}
+              id={idx === 0 ? 'first-youtube-video' : undefined}
               href={video.videoUrl}
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.08, duration: 0.3 }}
-              className="group carrd-card p-2 sm:p-2.5 flex flex-col justify-between overflow-hidden relative cursor-pointer"
+              className="group carrd-card p-2 sm:p-2.5 flex flex-col justify-between overflow-hidden relative cursor-pointer scroll-mt-24"
             >
               {/* Thumbnail Container */}
               <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-black/40 mb-1.5 sm:mb-2">

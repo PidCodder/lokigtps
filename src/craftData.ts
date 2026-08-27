@@ -35,7 +35,7 @@ export const SUPPORT_PLATFORMS: SupportPlatform[] = [
 
 export const MINECRAFT_SERVERS: MinecraftServer[] = [
   {
-    id: 'server-2',
+    id: 'server-1',
     name: 'CorePS Private Server',
     tags: 'Easy Economies • FRESH Server • Many Feature⚡️',
     icon: 'https://i.imgur.com/XkxdiBU.jpeg',
@@ -44,7 +44,7 @@ export const MINECRAFT_SERVERS: MinecraftServer[] = [
     playersOnline: 128,
   },
   {
-    id: 'server-3',
+    id: 'server-2',
     name: 'CreativePS Private Server',
     tags: 'Easy Economies • BIG Server • Many Players⚡️',
     icon: 'https://i.imgur.com/ZTKfDrv.png',
@@ -53,7 +53,7 @@ export const MINECRAFT_SERVERS: MinecraftServer[] = [
     playersOnline: 128,
   },
   {
-    id: 'server-2',
+    id: 'server-3',
     name: 'GROWINDO Private Server',
     tags: 'Mid Economies • RMT Players • Many Players⚡️',
     icon: 'https://i.imgur.com/jh6LGiC.png',
@@ -62,7 +62,7 @@ export const MINECRAFT_SERVERS: MinecraftServer[] = [
     playersOnline: 128,
   },
   {
-    id: 'server-3',
+    id: 'server-4',
     name: 'NUSATOPIA Private Server',
     tags: 'Stable Economies • ManyFreatures • Many Event⚡️',
     icon: 'https://i.imgur.com/jtWUgu7.jpeg',

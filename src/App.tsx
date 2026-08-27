@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   YUMICHIEE_PROFILE,
   SUPPORT_PLATFORMS,
@@ -7,15 +7,43 @@ import {
 import { MinecraftServer } from './types';
 import { ServerModal } from './components/ServerModal';
 import { WelcomeModal } from './components/WelcomeModal';
+import { TutorialPage } from './components/TutorialPage';
 import { YouTubeVideos } from './components/YouTubeVideos';
-import { Globe, Youtube, ArrowRight } from 'lucide-react';
+import { Globe, Youtube, ArrowRight, BookOpen } from 'lucide-react';
 import { Navbar } from './components/Navbar';
 import { motion } from 'motion/react';
 
 export default function App() {
+  const [currentPath, setCurrentPath] = useState<string>(() => {
+    if (typeof window !== 'undefined') {
+      return window.location.pathname;
+    }
+    return '/';
+  });
   const [selectedServer, setSelectedServer] = useState<MinecraftServer | null>(null);
-  const [showWelcomeModal, setShowWelcomeModal] = useState(true);
+  const [showWelcomeModal, setShowWelcomeModal] = useState(() => {
+    if (typeof window !== 'undefined' && window.location.pathname.startsWith('/tutorial')) {
+      return false;
+    }
+    return true;
+  });
   const [hasStartedAudio, setHasStartedAudio] = useState(false);
+
+  useEffect(() => {
+    const handlePopState = () => {
+      setCurrentPath(window.location.pathname);
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  const navigateTo = (path: string) => {
+    if (typeof window !== 'undefined') {
+      window.history.pushState({}, '', path);
+      setCurrentPath(path);
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    }
+  };
 
   const handleCloseWelcomeModal = () => {
     setShowWelcomeModal(false);
@@ -45,6 +73,15 @@ export default function App() {
       <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.763.459 3.486 1.332 5.003l-1.417 5.176 5.297-1.389c1.464.798 3.111 1.218 4.775 1.219h.004c5.505 0 9.988-4.478 9.989-9.985 0-2.667-1.037-5.175-2.923-7.061s-4.393-2.924-7.067-2.924zm0 1.636c2.23 0 4.327.869 5.903 2.446 1.577 1.576 2.444 3.673 2.444 5.902 0 4.603-3.743 8.347-8.347 8.347h-.003c-1.469 0-2.912-.392-4.17-1.135l-.299-.177-3.1 1.813.828-3.023-.195-.311c-.815-1.3-1.246-2.809-1.246-4.35 0-4.604 3.744-8.347 8.348-8.347zm4.568 11.233c-.251-.126-1.488-.734-1.719-.818-.231-.084-.399-.126-.567.126-.168.251-.65.818-.797.985-.147.168-.294.189-.545.063-.251-.126-1.06-.391-2.019-1.246-.747-.666-1.252-1.489-1.399-1.74-.147-.251-.016-.387.11-.512.113-.112.251-.294.377-.441.126-.147.168-.251.251-.419.084-.168.042-.315-.021-.441-.063-.126-.567-1.365-.777-1.869-.205-.492-.415-.425-.567-.433l-.483-.008c-.168 0-.441.063-.671.315-.231.251-.881.861-.881 2.1 0 1.239.902 2.436 1.028 2.604.126.168 1.776 2.712 4.302 3.803.601.26 1.07.415 1.436.531.603.191 1.152.164 1.586.099.484-.072 1.488-.608 1.697-1.196.209-.588.209-1.091.147-1.196-.063-.105-.231-.189-.482-.315z"/>
     </svg>
   );
+
+  if (currentPath === '/tutorial' || currentPath.startsWith('/tutorial')) {
+    return (
+      <TutorialPage
+        onNavigateHome={() => navigateTo('/')}
+        shouldPlayAudio={hasStartedAudio}
+      />
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[#c2410c] flex flex-col items-center justify-start font-sans text-stone-100 selection:bg-orange-500 selection:text-white relative p-0 m-0">
@@ -201,42 +238,56 @@ export default function App() {
           }}
           className="w-full space-y-3.5 mb-8"
         >
-          {/* Top Button: WhatsApp Green */}
-          <a
-            href="https://chat.whatsapp.com/GhlwYFeJhgD4Onl3BEK3nP"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full p-2.5 sm:p-3 px-4 flex items-center gap-3.5 rounded-[20px] bg-gradient-to-r from-[#00b05b] via-[#10b981] to-[#059669] hover:from-[#00c868] hover:to-[#047857] active:scale-[0.98] transition-all shadow-lg shadow-black/20 group"
-          >
-            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-white/20 flex items-center justify-center flex-shrink-0 backdrop-blur-xs group-hover:bg-white/25 transition-colors">
-              <WhatsAppIcon />
-            </div>
-            <span className="text-sm sm:text-base font-semibold text-white tracking-wide">
-              Comunity Group Promoter INDONESIA
-            </span>
-          </a>
-
-          {/* Bottom Button: Discord Purple/Blue */}
+          {/* Top Button: Discord Purple/Blue */}
           <a
             href="https://discord.com/invite/XaTn4quvnZ"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full p-2.5 sm:p-3 px-4 flex items-center gap-3.5 rounded-[20px] bg-gradient-to-r from-[#5865F2] via-[#6366f1] to-[#4f46e5] hover:from-[#6975f3] hover:to-[#4338ca] active:scale-[0.98] transition-all shadow-lg shadow-black/20 group"
+            className="relative w-full min-h-[54px] sm:min-h-[58px] p-2.5 sm:p-3 px-4 flex items-center justify-center rounded-[20px] bg-gradient-to-r from-[#5865F2] via-[#6366f1] to-[#4f46e5] hover:from-[#6975f3] hover:to-[#4338ca] active:scale-[0.98] transition-all shadow-lg shadow-black/20 group"
           >
-            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-white/20 flex items-center justify-center flex-shrink-0 backdrop-blur-xs group-hover:bg-white/25 transition-colors">
+            <div className="absolute left-2.5 sm:left-3 w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-white/20 flex items-center justify-center flex-shrink-0 backdrop-blur-xs group-hover:bg-white/25 transition-colors">
               <DiscordIcon />
             </div>
-            <span className="text-sm sm:text-base font-semibold text-white tracking-wide">
+            <span className="text-sm sm:text-base font-semibold text-white tracking-wide text-center px-12">
               Order Promote Service? Click Here !
             </span>
           </a>
 
-          {/* Banner Text under Discord Button */}
-          <div className="pt-1 text-center">
-            <p className="text-xs sm:text-sm font-extrabold tracking-wider uppercase text-amber-300 drop-shadow-[0_1.5px_1.5px_rgba(0,0,0,0.9)]">
-              Order Promote? Join Comunity Discord LokiGTPS
+          {/* Bottom Button: WhatsApp Green */}
+          <a
+            href="https://chat.whatsapp.com/GhlwYFeJhgD4Onl3BEK3nP"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative w-full min-h-[54px] sm:min-h-[58px] p-2.5 sm:p-3 px-4 flex items-center justify-center rounded-[20px] bg-gradient-to-r from-[#00b05b] via-[#10b981] to-[#059669] hover:from-[#00c868] hover:to-[#047857] active:scale-[0.98] transition-all shadow-lg shadow-black/20 group"
+          >
+            <div className="absolute left-2.5 sm:left-3 w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-white/20 flex items-center justify-center flex-shrink-0 backdrop-blur-xs group-hover:bg-white/25 transition-colors">
+              <WhatsAppIcon />
+            </div>
+            <span className="text-sm sm:text-base font-semibold text-white tracking-wide text-center px-12">
+              Comunity Group Promoter INDONESIA
+            </span>
+          </a>
+
+          {/* Banner Text under Buttons */}
+          <div className="pt-0.5 text-center">
+            <p className="text-xs sm:text-sm font-semibold tracking-wide text-amber-300 drop-shadow-sm">
+              ORDER PROMOTE? JOIN COMUNITY DISCORD LOKIGTPS
             </p>
           </div>
+
+          {/* TUTORIAL BERMAIN GTPS Button */}
+          <button
+            id="tutorial-bermain-gtps-btn"
+            onClick={() => navigateTo('/tutorial')}
+            className="relative w-full min-h-[54px] sm:min-h-[58px] p-2.5 sm:p-3 px-4 flex items-center justify-center rounded-[20px] bg-gradient-to-r from-[#d97706] via-[#ea580c] to-[#c2410c] hover:from-[#f59e0b] hover:to-[#d97706] active:scale-[0.98] transition-all shadow-lg shadow-black/20 group cursor-pointer"
+          >
+            <div className="absolute left-2.5 sm:left-3 w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-white/20 flex items-center justify-center flex-shrink-0 backdrop-blur-xs group-hover:bg-white/25 transition-colors text-white">
+              <BookOpen className="w-5 h-5 text-white" />
+            </div>
+            <span className="text-sm sm:text-base font-semibold text-white tracking-wide text-center px-12">
+              Tutorial Bermain GTPS
+            </span>
+          </button>
         </motion.div>
 
         {/* Latest YouTube Videos Section */}
