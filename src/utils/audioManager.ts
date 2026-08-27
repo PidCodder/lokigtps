@@ -6,6 +6,8 @@ class AudioManager {
   private targetVolume = 0.6;
   private fadeInterval: number | null = null;
   private listeners: Set<(playing: boolean) => void> = new Set();
+  private hasInteractionListener = false;
+  private userExplicitlyPaused = false;
 
   private clearFade() {
     if (this.fadeInterval !== null) {
@@ -95,6 +97,7 @@ class AudioManager {
   }
 
   public play(fadeInMs: number = 1500): Promise<void> {
+    this.userExplicitlyPaused = false;
     const audio = this.getAudio();
     if (!audio) return Promise.resolve();
 
@@ -141,12 +144,16 @@ class AudioManager {
           console.warn('Playback prevented by browser policy:', err);
           this.isPlaying = false;
           this.notify(false);
+          throw err;
         });
     }
     return Promise.resolve();
   }
 
-  public pause(fadeOutMs: number = 500) {
+  public pause(fadeOutMs: number = 500, explicit: boolean = true) {
+    if (explicit) {
+      this.userExplicitlyPaused = true;
+    }
     const audio = this.getAudio();
     this.clearFade();
 
@@ -195,10 +202,46 @@ class AudioManager {
 
   public toggle() {
     if (this.isPlaying) {
-      this.pause(400);
+      this.pause(400, true);
     } else {
       this.play(1500);
     }
+  }
+
+  /**
+   * Mengatasi browser autoplay policy saat membuka URL langsung (seperti /tutorial):
+   * Mencoba play langsung, jika diblokir oleh browser, akan otomatis mulai memutar
+   * saat pengunjung pertama kali menyentuh/mengklik/scroll layar.
+   */
+  public enableAutoplayOnFirstInteraction(fadeInMs: number = 1500) {
+    if (typeof window === 'undefined' || this.isPlaying || this.userExplicitlyPaused) return;
+
+    this.play(fadeInMs).catch(() => {
+      if (this.hasInteractionListener) return;
+      this.hasInteractionListener = true;
+
+      const triggerPlayback = () => {
+        if (!this.isPlaying && !this.userExplicitlyPaused) {
+          this.play(fadeInMs).catch(() => {});
+        }
+        cleanup();
+      };
+
+      const cleanup = () => {
+        this.hasInteractionListener = false;
+        window.removeEventListener('pointerdown', triggerPlayback, true);
+        window.removeEventListener('touchstart', triggerPlayback, true);
+        window.removeEventListener('click', triggerPlayback, true);
+        window.removeEventListener('keydown', triggerPlayback, true);
+        window.removeEventListener('scroll', triggerPlayback, true);
+      };
+
+      window.addEventListener('pointerdown', triggerPlayback, { once: true, capture: true });
+      window.addEventListener('touchstart', triggerPlayback, { once: true, capture: true });
+      window.addEventListener('click', triggerPlayback, { once: true, capture: true });
+      window.addEventListener('keydown', triggerPlayback, { once: true, capture: true });
+      window.addEventListener('scroll', triggerPlayback, { once: true, capture: true, passive: true });
+    });
   }
 }
 

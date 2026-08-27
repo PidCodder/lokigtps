@@ -249,7 +249,7 @@ export default function App() {
               <DiscordIcon />
             </div>
             <span className="text-sm sm:text-base font-semibold text-white tracking-wide text-center px-12">
-              Order Promote Service? Click Here !
+              Order Promote Service?
             </span>
           </a>
 
@@ -264,7 +264,7 @@ export default function App() {
               <WhatsAppIcon />
             </div>
             <span className="text-sm sm:text-base font-semibold text-white tracking-wide text-center px-12">
-              Comunity Group Promoter INDONESIA
+              Comunity Group Promoter
             </span>
           </a>
 

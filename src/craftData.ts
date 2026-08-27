@@ -21,13 +21,13 @@ export const YUMICHIEE_PROFILE: YumichieeProfile & { logoImage: string } = {
 export const SUPPORT_PLATFORMS: SupportPlatform[] = [
   {
     id: 'Promote Service',
-    title: 'Order Promote Service? Click Here !',
+    title: 'Order Promote Service?',
     platformName: 'Discord',
     url: 'https://discord.com/invite/XaTn4quvnZ',
   },
   {
     id: 'Comunity Promote',
-    title: 'Comunity Group Promoter INDONESIA',
+    title: 'Comunity Group Promoter',
     platformName: 'Whatsapp Group',
     url: 'https://chat.whatsapp.com/GhlwYFeJhgD4Onl3BEK3nP',
   },

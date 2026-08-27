@@ -16,6 +16,7 @@ import {
   FileText
 } from 'lucide-react';
 import { AudioPlayer } from './AudioPlayer';
+import { audioManager } from '../utils/audioManager';
 
 // PowerTunnel Step Images
 import ptunel1 from '../assets/images/ptunrl1.jpg';
@@ -252,6 +253,8 @@ export const TutorialPage: React.FC<TutorialPageProps> = ({ onNavigateHome, shou
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    // Otomatis putar musik / aktifkan saat user pertama kali tap atau interaksi
+    audioManager.enableAutoplayOnFirstInteraction();
   }, []);
 
   const handleCopy = (text: string, label: string) => {
