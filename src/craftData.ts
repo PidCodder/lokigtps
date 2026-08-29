@@ -35,15 +35,6 @@ export const SUPPORT_PLATFORMS: SupportPlatform[] = [
 
 export const MINECRAFT_SERVERS: MinecraftServer[] = [
   {
-    id: 'server-2',
-    name: 'CreativePS Private Server',
-    tags: 'Easy Economies • BIG Server • Many Players⚡️',
-    icon: 'https://i.imgur.com/ZTKfDrv.png',
-    description: 'CreativePS adalah Growtopia Private Server Big yang memiliki banyak sekali Players!',
-    link: 'https://creativeps.netlify.app/',
-    playersOnline: 128,
-  },
-  {
     id: 'server-3',
     name: 'GROWINDO Private Server',
     tags: 'Mid Economies • RMT Players • Many Players⚡️',
@@ -68,6 +59,15 @@ export const MINECRAFT_SERVERS: MinecraftServer[] = [
     icon: 'https://i.imgur.com/y9barye.jpeg',
     description: 'FORCE adalah Growtopia Private Server Fresh yang memiliki banyak Sekali Update Setelah Rollback!',
     link: 'https://chat.whatsapp.com/LPt04XKArXu6JsyIspqmmn',
+    playersOnline: 128,
+  },
+  {
+    id: 'server-2',
+    name: 'TERA Private Server',
+    tags: 'MID Economies • BIG Server • Many Players⚡️',
+    icon: 'https://i.imgur.com/RVU6EA7.png',
+    description: 'TERA adalah Growtopia Private Server Big yang memiliki banyak sekali Players!',
+    link: 'https://chat.whatsapp.com/KUli5gCNFwFJump2usRIpn',
     playersOnline: 128,
   },
 ];
