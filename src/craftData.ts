@@ -35,15 +35,6 @@ export const SUPPORT_PLATFORMS: SupportPlatform[] = [
 
 export const MINECRAFT_SERVERS: MinecraftServer[] = [
   {
-    id: 'server-3',
-    name: 'GROWINDO Private Server',
-    tags: 'Mid Economies • RMT Players • Many Players⚡️',
-    icon: 'https://i.imgur.com/jh6LGiC.png',
-    description: 'GROWINDO adalah Growtopia Private Server yang memiliki banyak sekali Players RMT!',
-    link: 'https://linktr.ee/growindops',
-    playersOnline: 128,
-  },
-  {
     id: 'server-4',
     name: 'NUSATOPIA Private Server',
     tags: 'Stable Economies • Many Features • Many Event⚡️',
@@ -68,6 +59,15 @@ export const MINECRAFT_SERVERS: MinecraftServer[] = [
     icon: 'https://i.imgur.com/RVU6EA7.png',
     description: 'TERA adalah Growtopia Private Server Big yang memiliki banyak sekali Players!',
     link: 'https://chat.whatsapp.com/KUli5gCNFwFJump2usRIpn',
+    playersOnline: 128,
+  },
+    {
+    id: 'server-3',
+    name: 'TREE Private Server',
+    tags: 'HARD Economies • RMT Players • Fresh Server⚡️',
+    icon: 'https://i.imgur.com/7GUSirJ.jpeg',
+    description: 'GROWINDO adalah Growtopia Private Server yang memiliki banyak sekali Players RMT!',
+    link: 'https://linktr.ee/growindops',
     playersOnline: 128,
   },
 ];
