@@ -1,6 +1,6 @@
 {
   "name": "LokiGTPS",
-  "description": "LokiGTPS Carrd landing page featuring Growtopia Private Server promotions, Minecraft server lists, support links, and social channels.",
+  "description": "Layanan promosi Growtopia Private Server resmi, server list, tutorial GTPS, dan komunitas LokiGTPS.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

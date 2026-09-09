@@ -279,12 +279,12 @@ export default function App() {
           <button
             id="tutorial-bermain-gtps-btn"
             onClick={() => navigateTo('/tutorial')}
-            className="relative w-full min-h-[54px] sm:min-h-[58px] p-2.5 sm:p-3 px-4 flex items-center justify-center rounded-[20px] bg-gradient-to-r from-[#d97706] via-[#ea580c] to-[#c2410c] hover:from-[#f59e0b] hover:to-[#d97706] active:scale-[0.98] transition-all shadow-lg shadow-black/20 group cursor-pointer"
+            className="relative w-full min-h-[54px] sm:min-h-[58px] p-2.5 sm:p-3 px-4 flex items-center justify-center rounded-[20px] bg-gradient-to-r from-[#ea580c] via-[#f97316] to-[#ea580c] hover:from-[#f97316] hover:via-[#fb923c] hover:to-[#f97316] active:scale-[0.98] transition-all duration-200 shadow-lg shadow-black/25 text-white font-semibold cursor-pointer border border-white/20 group"
           >
-            <div className="absolute left-2.5 sm:left-3 w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-white/20 flex items-center justify-center flex-shrink-0 backdrop-blur-xs group-hover:bg-white/25 transition-colors text-white">
-              <BookOpen className="w-5 h-5 text-white" />
+            <div className="absolute left-2.5 sm:left-3 w-10 h-10 sm:w-11 sm:h-11 rounded-[13px] bg-white/15 border border-white/20 flex items-center justify-center flex-shrink-0 group-hover:bg-white/25 transition-colors text-white shadow-xs">
+              <BookOpen className="w-5 h-5 text-white transition-transform duration-200 group-hover:scale-105" />
             </div>
-            <span className="text-sm sm:text-base font-semibold text-white tracking-wide text-center px-12">
+            <span className="text-sm sm:text-base font-semibold text-white tracking-wide text-center px-12 drop-shadow-xs">
               Tutorial Bermain GTPS
             </span>
           </button>
