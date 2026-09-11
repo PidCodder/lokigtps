@@ -1,6 +1,6 @@
 {
   "name": "LokiGTPS",
-  "description": "Layanan promosi Growtopia Private Server resmi, server list, tutorial GTPS, dan komunitas LokiGTPS.",
+  "description": "Layanan promosi resmi Growtopia Private Server (GTPS) terpercaya, server list aktif terbaru 2026, tutorial cara main GTPS, dan komunitas LokiGTPS.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
