@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Volume2, VolumeX } from 'lucide-react';
-import { motion } from 'motion/react';
 import { audioManager } from '../utils/audioManager';
 
 interface AudioPlayerProps {
@@ -30,30 +29,32 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({ shouldPlay }) => {
   };
 
   return (
-    <motion.button
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+    <button
       onClick={togglePlayPause}
-      className="px-3.5 sm:px-4 py-2 min-w-[125px] sm:min-w-[140px] rounded-full bg-gradient-to-r from-amber-400 via-orange-400 to-amber-500 text-stone-950 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md hover:shadow-orange-500/20 hover:scale-102 active:scale-95 transition-all cursor-pointer border border-white/50 shrink-0 whitespace-nowrap select-none touch-manipulation"
+      className={`px-2.5 sm:px-4 py-1.5 sm:py-2 min-w-[95px] sm:min-w-[136px] rounded-full text-[11px] sm:text-sm font-semibold flex items-center justify-center gap-1.5 sm:gap-2 shadow-xs cursor-pointer shrink-0 whitespace-nowrap select-none touch-manipulation ${
+        isPlaying
+          ? 'bg-white text-orange-700 hover:bg-orange-50 shadow-sm border border-white'
+          : 'bg-orange-700/60 hover:bg-orange-700 text-white border border-white/30'
+      }`}
       title={isPlaying ? 'Matikan Musik' : 'Putar Musik'}
     >
       {isPlaying ? (
         <>
-          <div className="flex items-end gap-0.5 h-3.5 px-0.5 shrink-0">
-            <span className="w-0.5 bg-stone-950 rounded-full animate-[bounce_0.8s_infinite_100ms] h-full" />
-            <span className="w-0.5 bg-stone-950 rounded-full animate-[bounce_0.8s_infinite_300ms] h-2.5" />
-            <span className="w-0.5 bg-stone-950 rounded-full animate-[bounce_0.8s_infinite_200ms] h-3" />
+          <div className="flex items-end gap-0.5 h-3 sm:h-3.5 px-0.5 shrink-0">
+            <span className="w-0.5 bg-orange-600 rounded-full h-full" />
+            <span className="w-0.5 bg-orange-600 rounded-full h-2.5" />
+            <span className="w-0.5 bg-orange-600 rounded-full h-3" />
           </div>
           <span className="tracking-tight">Musik On</span>
-          <Volume2 className="w-4 h-4 text-stone-950 shrink-0" />
+          <Volume2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-orange-600 shrink-0" />
         </>
       ) : (
         <>
-          <VolumeX className="w-4 h-4 text-stone-800 shrink-0" />
-          <span className="tracking-tight">Putar Musik</span>
+          <VolumeX className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white/90 shrink-0" />
+          <span className="tracking-tight text-white">Putar Musik</span>
         </>
       )}
-    </motion.button>
+    </button>
   );
 };
+

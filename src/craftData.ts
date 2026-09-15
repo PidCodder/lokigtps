@@ -4,7 +4,7 @@ import paviconImg from './assets/images/pavicon.webp';
 import server1Img from './assets/images/server1.webp';
 
 export const YUMICHIEE_PROFILE: YumichieeProfile & { logoImage: string } = {
-  handle: '@LokiGTPS',
+  handle: '@LOKIGTPS',
   greeting: 'Best Promote GTPS Indonesia🚀',
   subtitle: 'Growtopia Private Server Promoter & Content Creator ⚡',
   badges: 'Growtopia • GTPS Promote • Community',
@@ -35,15 +35,6 @@ export const SUPPORT_PLATFORMS: SupportPlatform[] = [
 
 export const MINECRAFT_SERVERS: MinecraftServer[] = [
   {
-    id: 'server-4',
-    name: 'NUSATOPIA Private Server',
-    tags: 'Stable Economies • Many Features • Many Event⚡️',
-    icon: 'https://i.imgur.com/jtWUgu7.jpeg',
-    description: 'NUSATOPIA adalah Growtopia Private Server Fresh yang memiliki banyak sekali Features dan custom item!',
-    link: 'https://chat.whatsapp.com/KWw1HmsIsoT7JmalF0d4vS',
-    playersOnline: 128,
-  },
-  {
     id: 'server-5',
     name: 'FORCE Private Server',
     tags: 'Stable Economies • Many Players • Many Event⚡️',
@@ -68,6 +59,15 @@ export const MINECRAFT_SERVERS: MinecraftServer[] = [
     icon: 'https://i.imgur.com/7GUSirJ.jpeg',
     description: 'GROWINDO adalah Growtopia Private Server yang memiliki banyak sekali Players RMT!',
     link: 'https://linktr.ee/growindops',
+    playersOnline: 128,
+  },
+  {
+    id: 'server-4',
+    name: 'LIT Private Server',
+    tags: 'Stable Economies • Many Features • RMT Server⚡️',
+    icon: 'https://i.imgur.com/cEHLg5R.jpeg',
+    description: 'LITPS adalah Growtopia Private Server Dengan Economy stable dan memiliki coin Crypto!',
+    link: 'https://linktr.ee/LitPS',
     playersOnline: 128,
   },
 ];

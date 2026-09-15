@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'motion/react';
 import { YUMICHIEE_PROFILE } from '../craftData';
 import { AudioPlayer } from './AudioPlayer';
 
@@ -12,44 +11,39 @@ export const Navbar: React.FC<NavbarProps> = ({
   isVisible = true,
   shouldPlay = false,
 }) => {
-  return (
-    <motion.div
-      initial={{ y: -90, opacity: 0 }}
-      animate={{
-        y: isVisible ? 0 : -90,
-        opacity: isVisible ? 1 : 0,
-      }}
-      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className={`fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-lg z-40 transform-gpu ${
-        isVisible ? 'pointer-events-auto' : 'pointer-events-none'
-      }`}
-    >
-      <header className="w-full flex items-center justify-between px-4 sm:px-5 py-3.5 sm:py-4 bg-[#ea580c]/25 backdrop-blur-md text-white border border-orange-400/50 rounded-none shadow-[0_0_15px_rgba(249,115,22,0.35)] gap-3">
-        <div className="flex items-center gap-3 min-w-0 shrink">
-          <img
-            src={YUMICHIEE_PROFILE.logoImage}
-            alt="LokiGTPS Logo"
-            className="w-11 h-11 sm:w-12 sm:h-12 rounded-full shadow-md border-2 border-white/60 object-cover shrink-0"
-            loading="eager"
-            decoding="async"
-            referrerPolicy="no-referrer"
-          />
-          <div className="flex flex-col leading-snug min-w-0">
-            <span className="text-base sm:text-lg font-extrabold tracking-wide text-white drop-shadow-xs truncate">
-              {YUMICHIEE_PROFILE.handle}
-            </span>
-            <span className="text-xs sm:text-sm text-amber-100/95 font-semibold truncate">
-              {YUMICHIEE_PROFILE.greeting}
-            </span>
-          </div>
-        </div>
+  if (!isVisible) return null;
 
-        {/* Music Player Button in Navbar */}
-        <AudioPlayer shouldPlay={shouldPlay} />
+  return (
+    <div className="fixed top-0 left-0 right-0 w-full z-40">
+      <header className="w-full bg-[#ea580c] border-b border-[#c2410c] shadow-sm text-white">
+        <div className="w-full max-w-5xl mx-auto px-3 sm:px-6 lg:px-8 py-2 sm:py-3.5 flex items-center justify-between gap-2.5 sm:gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0 shrink">
+            <img
+              src={YUMICHIEE_PROFILE.logoImage}
+              alt="LOKIGTPS Logo"
+              className="w-8 h-8 sm:w-11 sm:h-11 rounded-full shadow-xs border-2 border-white/60 object-cover shrink-0"
+              loading="eager"
+              decoding="async"
+              referrerPolicy="no-referrer"
+            />
+            <div className="flex flex-col leading-tight min-w-0">
+              <span className="text-sm sm:text-lg font-bold tracking-tight text-white truncate">
+                {YUMICHIEE_PROFILE.handle}
+              </span>
+              <span className="text-[10px] sm:text-xs text-orange-100 font-medium truncate">
+                {YUMICHIEE_PROFILE.greeting}
+              </span>
+            </div>
+          </div>
+
+          {/* Music Player Button in Navbar */}
+          <AudioPlayer shouldPlay={shouldPlay} />
+        </div>
       </header>
-    </motion.div>
+    </div>
   );
 };
 
 export default Navbar;
+
 
