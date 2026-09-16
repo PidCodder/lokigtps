@@ -266,9 +266,6 @@ export default function App() {
             <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-orange-600 inline-block" />
             <span>Growtopia Private Server</span>
           </h2>
-          <span className="text-[10px] sm:text-xs text-stone-500 font-medium">
-            {MINECRAFT_SERVERS.length} Server Aktif
-          </span>
         </div>
 
         {/* Server List - Responsive Multi-Column Grid */}
