@@ -60,7 +60,7 @@ export const CustomerSupportFooter: React.FC = () => {
             {/* Komunitas WhatsApp */}
             <a
               id="footer-whatsapp-komunitas"
-              href="https://chat.whatsapp.com/GHhkBU7HiQkLGyhAK4ysWj"
+              href="https://chat.whatsapp.com/BD8YuZDOC2MF4c9rhKoiDP?s=cl&p=i&mlu=4&ilr=4"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white hover:bg-stone-50 rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-4.5 flex items-center justify-between gap-3 shadow-md hover:shadow-lg cursor-pointer border border-white/50 group w-full transition-all"
