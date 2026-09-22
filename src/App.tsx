@@ -216,7 +216,7 @@ export default function App() {
 
             {/* WhatsApp Community Button - Orange */}
             <a
-              href="https://chat.whatsapp.com/GhlwYFeJhgD4Onl3BEK3nP"
+              href="https://chat.whatsapp.com/GHhkBU7HiQkLGyhAK4ysWj"
               target="_blank"
               rel="noopener noreferrer"
               className="relative p-2.5 sm:p-4 rounded-xl sm:rounded-2xl bg-orange-600 hover:bg-orange-500 text-white shadow-xs hover:shadow-md flex items-center gap-2.5 sm:gap-3.5 group cursor-pointer"
