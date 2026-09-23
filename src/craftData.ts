@@ -36,11 +36,11 @@ export const SUPPORT_PLATFORMS: SupportPlatform[] = [
 export const MINECRAFT_SERVERS: MinecraftServer[] = [
   {
     id: 'server-5',
-    name: 'FORCE Private Server',
-    tags: 'Stable Economies • Many Players • Many Event⚡️',
-    icon: 'https://i.imgur.com/y9barye.jpeg',
-    description: 'FORCE adalah Growtopia Private Server Fresh yang memiliki banyak Sekali Update Setelah Rollback!',
-    link: 'https://chat.whatsapp.com/LPt04XKArXu6JsyIspqmmn',
+    name: 'RAW Private Server',
+    tags: 'Stable Economies • FRESH SERVER • Many Event⚡️',
+    icon: 'https://i.imgur.com/OfvKj4G.jpeg',
+    description: 'RAWPS adalah Growtopia Private Server Fresh yang memiliki banyak Sekali Featues Menarik!',
+    link: 'https://linktr.ee/rawps',
     playersOnline: 128,
   },
   {
