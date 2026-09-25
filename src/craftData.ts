@@ -29,7 +29,7 @@ export const SUPPORT_PLATFORMS: SupportPlatform[] = [
     id: 'Comunity Promote',
     title: 'Comunity Group Promoter',
     platformName: 'Whatsapp Group',
-    url: 'https://chat.whatsapp.com/BD8YuZDOC2MF4c9rhKoiDP?s=cl&p=i&mlu=4&ilr=4',
+    url: 'https://chat.whatsapp.com/B9hC3oBe7hXAvrIwzHu4cG',
   },
 ];
 
