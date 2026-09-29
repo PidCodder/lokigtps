@@ -82,7 +82,6 @@ class AudioManager {
 
   public subscribe(listener: (playing: boolean) => void) {
     this.listeners.add(listener);
-    listener(this.isPlaying);
     return () => {
       this.listeners.delete(listener);
     };

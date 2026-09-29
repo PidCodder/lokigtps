@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useSyncExternalStore } from 'react';
 import { Volume2, VolumeX } from 'lucide-react';
 import { audioManager } from '../utils/audioManager';
 
@@ -7,14 +7,11 @@ interface AudioPlayerProps {
 }
 
 export const AudioPlayer: React.FC<AudioPlayerProps> = ({ shouldPlay }) => {
-  const [isPlaying, setIsPlaying] = useState<boolean>(() => audioManager.getIsPlaying());
-
-  useEffect(() => {
-    const unsubscribe = audioManager.subscribe((playing) => {
-      setIsPlaying(playing);
-    });
-    return unsubscribe;
-  }, []);
+  const isPlaying = useSyncExternalStore(
+    (callback) => audioManager.subscribe(() => callback()),
+    () => audioManager.getIsPlaying(),
+    () => false
+  );
 
   useEffect(() => {
     if (shouldPlay && !audioManager.getIsPlaying()) {
