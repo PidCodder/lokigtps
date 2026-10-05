@@ -33,41 +33,4 @@ export const SUPPORT_PLATFORMS: SupportPlatform[] = [
   },
 ];
 
-export const MINECRAFT_SERVERS: MinecraftServer[] = [
-  {
-    id: 'server-4',
-    name: 'MOON Private Server',
-    tags: 'EASY Economies • Many Features • Many Players⚡️',
-    icon: 'https://i.imgur.com/j7ue5Lu.jpeg',
-    description: 'MOONPS adalah Growtopia Private Server Dengan Economy Easy dan memiliki Banyak Player Active!',
-    link: 'https://linktr.ee/moonps1',
-    playersOnline: 128,
-  },
-  {
-    id: 'server-3',
-    name: 'DOM Private Server',
-    tags: 'EASY Economies • MANY Players • Fresh Server⚡️',
-    icon: 'https://i.imgur.com/TJAqKbZ.jpeg',
-    description: 'DOMPS adalah Growtopia Private Server yang memiliki Easy Economies dan newget yang melimpah!',
-    link: 'https://linktr.ee/moonps1',
-    playersOnline: 128,
-  },
-  {
-    id: 'server-2',
-    name: 'TERA Private Server',
-    tags: 'MID Economies • BIG Server • Many Players⚡️',
-    icon: 'https://i.imgur.com/RVU6EA7.png',
-    description: 'TERA adalah Growtopia Private Server Big yang memiliki banyak sekali Players!',
-    link: 'https://chat.whatsapp.com/Gt6YkCtF4eg3xKItfs6UhO?s=cl&p=i&mlu=4&ilr=4',
-    playersOnline: 128,
-  },
-  {
-    id: 'server-5',
-    name: 'RAW Private Server',
-    tags: 'Stable Economies • FRESH SERVER • Many Event⚡️',
-    icon: 'https://i.imgur.com/OfvKj4G.jpeg',
-    description: 'RAWPS adalah Growtopia Private Server Fresh yang memiliki banyak Sekali Featues Menarik!',
-    link: 'https://linktr.ee/rawps',
-    playersOnline: 128,
-  },
-];
+export const MINECRAFT_SERVERS: MinecraftServer[] = [];

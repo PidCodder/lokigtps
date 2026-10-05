@@ -259,57 +259,61 @@ export default function App() {
         </div>
 
         {/* Section Heading: Growtopia Private Server 🌏 */}
-        <div
-          className="w-full flex items-center justify-between mb-3 sm:mb-4 px-0.5"
-        >
-          <h2 className="text-sm sm:text-xl font-bold text-stone-900 flex items-center gap-1.5 sm:gap-2">
-            <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-orange-600 inline-block" />
-            <span>Growtopia Private Server</span>
-          </h2>
-        </div>
-
-        {/* Server List - Responsive Multi-Column Grid */}
-        <div
-          className="w-full grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-4 mb-6 sm:mb-10"
-        >
-          {MINECRAFT_SERVERS.map((server) => (
+        {MINECRAFT_SERVERS.length > 0 && (
+          <>
             <div
-              key={server.id}
-              className="carrd-card-orange p-3 sm:p-5 flex items-center gap-3 sm:gap-4 relative rounded-xl sm:rounded-2xl cursor-pointer group"
-              onClick={() => setSelectedServer(server)}
+              className="w-full flex items-center justify-between mb-3 sm:mb-4 px-0.5"
             >
-              {/* Server Logo Emblem */}
-              <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl overflow-hidden flex-shrink-0 bg-white/20 p-0.5 border border-white/30 shadow-xs flex items-center justify-center">
-                <img
-                  src={server.icon}
-                  alt={server.name}
-                  className="w-full h-full object-cover rounded-lg sm:rounded-xl"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-
-              {/* Server Details */}
-              <div className="flex-1 min-w-0">
-                <h3 className="text-xs sm:text-base font-bold text-white truncate">
-                  {server.name}
-                </h3>
-                <p className="text-[10px] sm:text-xs text-orange-100 font-medium mb-1.5 sm:mb-2.5 truncate">
-                  {server.tags}
-                </p>
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setSelectedServer(server);
-                  }}
-                  className="carrd-pill-white"
-                >
-                  <span>Start Your Adventure</span>
-                  <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
-                </button>
-              </div>
+              <h2 className="text-sm sm:text-xl font-bold text-stone-900 flex items-center gap-1.5 sm:gap-2">
+                <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-orange-600 inline-block" />
+                <span>Growtopia Private Server</span>
+              </h2>
             </div>
-          ))}
-        </div>
+
+            {/* Server List - Responsive Multi-Column Grid */}
+            <div
+              className="w-full grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-4 mb-6 sm:mb-10"
+            >
+              {MINECRAFT_SERVERS.map((server) => (
+                <div
+                  key={server.id}
+                  className="carrd-card-orange p-3 sm:p-5 flex items-center gap-3 sm:gap-4 relative rounded-xl sm:rounded-2xl cursor-pointer group"
+                  onClick={() => setSelectedServer(server)}
+                >
+                  {/* Server Logo Emblem */}
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl overflow-hidden flex-shrink-0 bg-white/20 p-0.5 border border-white/30 shadow-xs flex items-center justify-center">
+                    <img
+                      src={server.icon}
+                      alt={server.name}
+                      className="w-full h-full object-cover rounded-lg sm:rounded-xl"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+
+                  {/* Server Details */}
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-xs sm:text-base font-bold text-white truncate">
+                      {server.name}
+                    </h3>
+                    <p className="text-[10px] sm:text-xs text-orange-100 font-medium mb-1.5 sm:mb-2.5 truncate">
+                      {server.tags}
+                    </p>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedServer(server);
+                      }}
+                      className="carrd-pill-white"
+                    >
+                      <span>Start Your Adventure</span>
+                      <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
 
       </main>
 
